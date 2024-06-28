@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react"
 
-import { HeaderWithMegaMenu } from "../components/headers"
+import { HeaderMegaMenu } from "../components/headers"
 
 const meta = {
-  component: HeaderWithMegaMenu,
-} satisfies Meta<typeof HeaderWithMegaMenu>
+  component: HeaderMegaMenu,
+} satisfies Meta<typeof HeaderMegaMenu>
 
 export default meta
 
@@ -12,6 +12,6 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    title: "Storybook",
+    title: "Menu",
   },
 }

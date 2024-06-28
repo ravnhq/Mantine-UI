@@ -6,7 +6,7 @@
   "scripts": {
     "tsc": "tsc",
     "lint:ts": "eslint --cache --ext ts,tsx,js ./src",
-    "lint:ts:fix:all": "eslint --fix --ext ts,tsx,js ./src",
+    "lint:ts:fix:all": "eslint --fix --ext ts,tsx,js,jsx ./src",
     "lint:ts:fix": "npm run lint:ts --fix",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -40,7 +40,9 @@
     "prettier": "^3.3.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "sass": "^1.77.6",
     "storybook": "^8.1.11",
+    "storybook-dark-mode": "^4.0.2",
     "typescript": "^5.5.2"
   },
   "dependencies": {

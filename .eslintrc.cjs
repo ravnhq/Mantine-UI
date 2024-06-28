@@ -1,9 +1,12 @@
-module.export = {
+module.exports = {
   root: true,
-  extends: ["plugin:storybook/recommended", "@ravnhq/eslint-config", "@ravnhq/eslint-config/react"],
+  extends: [
+    "plugin:storybook/recommended",
+    "@ravnhq/eslint-config",
+    "@ravnhq/eslint-config/react"
+  ],
   rules: {
-    "@typescript-eslint/no-unsafe-assignment": "off",
-    "@typescript-eslint/no-unsafe-member-access": "off",
+    "filenames/match-exported": "off",
     "no-console": ["error", { "allow": ["warn", "error", "info"] }],
     "@typescript-eslint/no-unused-vars": [
       "error",
@@ -11,6 +14,6 @@ module.export = {
     ],
   },
   parserOptions: {
-    project: ["./tsconfig.json"],
+    project: "./tsconfig.json",
   },
 }

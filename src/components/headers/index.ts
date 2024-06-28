@@ -1,1 +1,1 @@
-export * from "./header-with-mega-menu"
+export * from "./header-mega-menu"
