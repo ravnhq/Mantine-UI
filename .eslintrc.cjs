@@ -1,6 +1,6 @@
 module.export = {
   root: true,
-  extends: ["@ravnhq/eslint-config", "@ravnhq/eslint-config/react"],
+  extends: ["plugin:storybook/recommended", "@ravnhq/eslint-config", "@ravnhq/eslint-config/react"],
   rules: {
     "@typescript-eslint/no-unsafe-assignment": "off",
     "@typescript-eslint/no-unsafe-member-access": "off",
