@@ -28,6 +28,7 @@ import {
   IconChevronDown,
 } from "@tabler/icons-react"
 import classes from "./header-mega-menu.module.scss"
+import { HeaderWithMegaMenuProps } from "./header-mega-menu.types"
 
 const mockdata = [
   {
@@ -62,7 +63,7 @@ const mockdata = [
   },
 ]
 
-export function HeaderMegaMenu() {
+export function HeaderMegaMenu({ button }: HeaderWithMegaMenuProps) {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false)
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false)
@@ -156,7 +157,9 @@ export function HeaderMegaMenu() {
           </Group>
 
           <Group visibleFrom="sm">
-            <Button variant="default">Log in</Button>
+            <Button variant="default" {...button}>
+              Log in
+            </Button>
             <Button>Sign up</Button>
           </Group>
 

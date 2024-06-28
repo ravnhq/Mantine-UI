@@ -13,5 +13,11 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   args: {
     title: "Menu",
+    button: {
+      variant: "filled",
+      style: {
+        color: "red",
+      },
+    },
   },
 }
