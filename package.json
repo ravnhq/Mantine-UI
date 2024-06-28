@@ -46,8 +46,7 @@
   "dependencies": {
     "@mantine/core": ">=7.11.0",
     "@mantine/hooks": ">=7.11.0",
-    "@tabler/icons-react": "^3.7.0",
-    "eslint": "^8.57.0"
+    "@tabler/icons-react": "^3.7.0"
   },
   "peerDependencies": {
     "@mantine/core": ">=7.11.0",
