@@ -1,13 +1,11 @@
 // Import styles of packages that you've installed.
 // All packages except `@mantine/hooks` require styles imports
 import "@mantine/core/styles.css"
-import React from "react"
 
-import { useEffect } from "react"
+import React, { useEffect } from "react"
 import { addons } from "@storybook/preview-api"
 import { DARK_MODE_EVENT_NAME } from "storybook-dark-mode"
 import { MantineProvider, useMantineColorScheme } from "@mantine/core"
-// theme.ts file from previous step
 
 const channel = addons.getChannel()
 
