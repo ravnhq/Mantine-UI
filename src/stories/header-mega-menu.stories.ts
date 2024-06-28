@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react"
 
-import { HeaderMegaMenu } from "../components/headers"
+import { HeaderMegaMenu } from "@components/headers"
 
 const meta = {
   component: HeaderMegaMenu,
