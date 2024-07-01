@@ -1,13 +1,13 @@
+import { HeaderMegaMenu } from "@components/headers"
 import type { Meta, StoryObj } from "@storybook/react"
 import {
-  IconNotification,
-  IconCode,
   IconBook,
   IconChartPie3,
-  IconFingerprint,
+  IconCode,
   IconCoin,
+  IconFingerprint,
+  IconNotification,
 } from "@tabler/icons-react"
-import { HeaderMegaMenu } from "@components/headers"
 
 const meta = {
   component: HeaderMegaMenu,

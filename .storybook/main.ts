@@ -1,8 +1,9 @@
 import type { StorybookConfig } from "@storybook/react-vite"
-import path from "path"
-const tsconfigPaths = require("vite-tsconfig-paths").default
+import path from "node:path"
+import { fileURLToPath } from "node:url"
+import tsconfigPaths from "vite-tsconfig-paths"
 
-const config: StorybookConfig = {
+const storybookConfig: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
     "@storybook/addon-onboarding",
@@ -16,11 +17,16 @@ const config: StorybookConfig = {
     name: "@storybook/react-vite",
     options: {},
   },
-  viteFinal: async (config) => {
+  viteFinal: (config) => {
     if (config.plugins) {
       config.plugins.push(
         tsconfigPaths({
-          projects: [path.resolve(path.dirname(__dirname), "tsconfig.json")],
+          projects: [
+            path.resolve(
+              path.dirname(path.dirname(fileURLToPath(import.meta.url))),
+              "tsconfig.json",
+            ),
+          ],
         }),
       )
     }
@@ -28,4 +34,4 @@ const config: StorybookConfig = {
     return config
   },
 }
-export default config
+export default storybookConfig

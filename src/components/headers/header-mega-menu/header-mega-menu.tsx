@@ -1,26 +1,26 @@
+import classes from "./header-mega-menu.module.scss"
+import { HeaderWithMegaMenuProps } from "./header-mega-menu.types"
 import {
-  HoverCard,
-  Group,
-  Button,
-  UnstyledButton,
-  Text,
-  SimpleGrid,
-  ThemeIcon,
   Anchor,
-  Divider,
-  Center,
   Box,
   Burger,
-  Drawer,
+  Button,
+  Center,
   Collapse,
+  Divider,
+  Drawer,
+  Group,
+  HoverCard,
   ScrollArea,
+  SimpleGrid,
+  Text,
+  ThemeIcon,
+  UnstyledButton,
   rem,
   useMantineTheme,
 } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
 import { IconChevronDown } from "@tabler/icons-react"
-import classes from "./header-mega-menu.module.scss"
-import { HeaderWithMegaMenuProps } from "./header-mega-menu.types"
 
 export function HeaderMegaMenu({
   primaryButtonProps,
