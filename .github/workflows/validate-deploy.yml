@@ -1,0 +1,13 @@
+name: Validate for Merge
+on:
+  push:
+    branches:
+      - main
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    uses: ./.github/workflows/_validate.yml
+    secrets: inherit
+# This is where we would put something like e2e tests, but we don't have any yet.
