@@ -4,12 +4,14 @@
   "description": "A collection of reusable UI components built with Mantine for seamless integration in React projects.",
   "main": "src/index.js",
   "scripts": {
+    "format": "prettier --write .",
     "tsc": "tsc",
-    "lint:ts": "eslint --cache --ext ts,tsx,js ./src",
+    "lint:ts": "eslint --cache --ext ts,tsx,js,jsx ./src",
     "lint:ts:fix:all": "eslint --fix --ext ts,tsx,js,jsx ./src",
     "lint:ts:fix": "npm run lint:ts --fix",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "husky"
   },
   "author": "Ravn",
   "license": "MIT",
