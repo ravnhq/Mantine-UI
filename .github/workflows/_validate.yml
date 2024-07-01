@@ -8,13 +8,13 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: "yarn"
-      - run: yarn --frozen-lockfile
+          cache: "npm"
+      - run: npm ci
       - uses: actions/cache@v3
         with:
           path: .eslintcache
           key: eslint-cache
-      - run: yarn static
+      - run: npm static
       - name: Cancelling parallel jobs
         if: failure()
         uses: andymckay/cancel-action@0.2
