@@ -1,34 +1,34 @@
+import classes from "./header-mega-menu.module.scss"
+import { HeaderWithMegaMenuProps } from "./header-mega-menu.types"
 import {
-  HoverCard,
-  Group,
-  Button,
-  UnstyledButton,
-  Text,
-  SimpleGrid,
-  ThemeIcon,
   Anchor,
-  Divider,
-  Center,
   Box,
   Burger,
-  Drawer,
+  Button,
+  Center,
   Collapse,
+  Divider,
+  Drawer,
+  Group,
+  HoverCard,
   ScrollArea,
+  SimpleGrid,
+  Text,
+  ThemeIcon,
+  UnstyledButton,
   rem,
   useMantineTheme,
 } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
 import {
-  IconNotification,
-  IconCode,
   IconBook,
   IconChartPie3,
-  IconFingerprint,
-  IconCoin,
   IconChevronDown,
+  IconCode,
+  IconCoin,
+  IconFingerprint,
+  IconNotification,
 } from "@tabler/icons-react"
-import classes from "./header-mega-menu.module.scss"
-import { HeaderWithMegaMenuProps } from "./header-mega-menu.types"
 
 const mockdata = [
   {

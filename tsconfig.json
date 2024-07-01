@@ -23,7 +23,7 @@
     /* Ravn config */
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "src",
+    "baseUrl": "./",
     "esModuleInterop": true,
     "downlevelIteration": true,
     "exactOptionalPropertyTypes": true,
@@ -37,10 +37,10 @@
 
     // /* Aliases config */
     "paths": {
-      "@components/*": ["components/*"]
+      "@components/*": ["./src/components/*"]
     }
   },
   "typeRoots": ["global.d.ts"],
-  "include": ["**/*.ts", "**/*.tsx", "**/*.d.ts"],
+  "include": ["**/*.ts", "**/*.tsx", "**/*.d.ts", "./.storybook/*"],
   "exclude": [".eslintrc.cjs", "node_modules", "./dist"]
 }

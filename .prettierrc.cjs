@@ -5,6 +5,7 @@ module.exports = {
     {
       files: ["**/*.{cjs,js,ts,jsx,tsx,scss,css}"],
       options: {
+        plugins: ["@trivago/prettier-plugin-sort-imports"],
         ...sharedConfig,
       },
     },
