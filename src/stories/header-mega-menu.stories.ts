@@ -1,5 +1,13 @@
 import { HeaderMegaMenu } from "@components/headers"
 import type { Meta, StoryObj } from "@storybook/react"
+import {
+  IconBook,
+  IconChartPie3,
+  IconCode,
+  IconCoin,
+  IconFingerprint,
+  IconNotification,
+} from "@tabler/icons-react"
 
 const meta = {
   component: HeaderMegaMenu,
@@ -9,14 +17,64 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
+const subMenuMockdata = [
+  {
+    icon: IconCode,
+    title: "Open source",
+    description: "This Pokémon’s cry is very loud and distracting",
+  },
+  {
+    icon: IconCoin,
+    title: "Free for everyone",
+    description: "The fluid of Smeargle’s tail secretions changes",
+  },
+  {
+    icon: IconBook,
+    title: "Documentation",
+    description: "Yanma is capable of seeing 360 degrees without",
+  },
+  {
+    icon: IconFingerprint,
+    title: "Security",
+    description: "The shell’s rounded shape and the grooves on its.",
+  },
+  {
+    icon: IconChartPie3,
+    title: "Analytics",
+    description: "This Pokémon uses its flying ability to quickly chase",
+  },
+  {
+    icon: IconNotification,
+    title: "Notifications",
+    description: "Combusken battles with the intensely hot flames it spews",
+  },
+]
+
+const menuMockData = [
+  {
+    title: "Home",
+    isSubMenu: false,
+  },
+  {
+    title: "Features",
+    isSubMenu: true,
+  },
+]
+
 export const Default: Story = {
   args: {
-    title: "Menu",
-    button: {
+    primaryButtonProps: {
+      style: {
+        color: "red",
+      },
+    },
+    secondaryButtonProps: {
       variant: "filled",
       style: {
         color: "red",
       },
     },
+    menuItems: menuMockData,
+    subMenuItems: subMenuMockdata,
   },
 }
