@@ -76,7 +76,7 @@ export function HeaderMegaMenu({
                         <a href="#" className={classes.link}>
                           <Center inline>
                             <Box component="span" mr={5}>
-                              Features
+                              {item.title}
                             </Box>
                             <IconChevronDown
                               style={{ width: rem(16), height: rem(16) }}
@@ -88,7 +88,7 @@ export function HeaderMegaMenu({
 
                       <HoverCard.Dropdown style={{ overflow: "hidden" }}>
                         <Group justify="space-between" px="md">
-                          <Text fw={500}>Features</Text>
+                          <Text fw={500}>{item.title}</Text>
                           <Anchor href="#" fz="xs">
                             View all
                           </Anchor>
@@ -127,10 +127,10 @@ export function HeaderMegaMenu({
           </Group>
 
           <Group visibleFrom="sm">
-            <Button variant="default" {...primaryButtonProps}>
-              {primaryButtontitle}
+            <Button variant="default" {...secondaryButtonProps}>
+              {secondarybuttontitle}
             </Button>
-            <Button {...secondaryButtonProps}>{secondarybuttontitle}</Button>
+            <Button {...primaryButtonProps}>{primaryButtontitle}</Button>
           </Group>
 
           <Burger
@@ -185,8 +185,10 @@ export function HeaderMegaMenu({
           <Divider my="sm" />
 
           <Group justify="center" grow pb="xl" px="md">
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            <Button variant="default" {...secondaryButtonProps}>
+              {secondarybuttontitle}
+            </Button>
+            <Button {...primaryButtonProps}>{primaryButtontitle}</Button>
           </Group>
         </ScrollArea>
       </Drawer>
