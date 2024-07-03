@@ -1,11 +1,11 @@
-interface Links {
+interface Link {
   label: string
   link: string
 }
 
 interface LinkColumn {
   title: string
-  links: Links[]
+  links: Link[]
 }
 
 export type FooterLinksProps = {
