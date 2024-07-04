@@ -40,7 +40,13 @@ export default [
         ],
       }),
     ],
-    external: ["react", "react-dom"],
+    external: [
+      "react",
+      "react-dom",
+      "@mantine/core",
+      "@mantine/hooks",
+      "@tabler/icons-react",
+    ],
   },
   {
     input: "src/index.ts",
