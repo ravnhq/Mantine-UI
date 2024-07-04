@@ -2,14 +2,50 @@ import commonjs from "@rollup/plugin-commonjs"
 import resolve from "@rollup/plugin-node-resolve"
 import terser from "@rollup/plugin-terser"
 import typescript from "@rollup/plugin-typescript"
+import path from "node:path"
 import { dts } from "rollup-plugin-dts"
 import peerDepsExternal from "rollup-plugin-peer-deps-external"
 import postcss from "rollup-plugin-postcss"
 
 const packageJson = require("./package.json")
 
-export default [
-  {
+const outputDir = "dist"
+const cssOutputPath = path.join(outputDir, "index.css")
+const sharedPlugins = [
+  peerDepsExternal(),
+  resolve(),
+  commonjs(),
+  typescript({ tsconfig: "./tsconfig.rollup.json" }),
+  terser(),
+]
+
+const createCSSBuild = () => {
+  return {
+    input: "src/index.ts",
+    output: {
+      file: cssOutputPath,
+    },
+    plugins: [
+      sharedPlugins,
+      postcss({
+        extract: "index.css",
+        minimize: true,
+        use: [
+          [
+            "sass",
+            {
+              data: '@import "./_mantine.scss"; ',
+            },
+          ],
+        ],
+      }),
+    ],
+    external: [],
+  }
+}
+
+const createJSBuild = () => {
+  return {
     input: "src/index.ts",
     output: [
       {
@@ -22,13 +58,9 @@ export default [
       },
     ],
     plugins: [
-      peerDepsExternal(),
-      resolve(),
-      commonjs(),
-      typescript({ tsconfig: "./tsconfig.rollup.json" }),
-      terser(),
+      ...sharedPlugins,
       postcss({
-        extract: true,
+        extract: false,
         minimize: true,
         use: [
           [
@@ -47,11 +79,20 @@ export default [
       "@mantine/hooks",
       "@tabler/icons-react",
     ],
-  },
-  {
+  }
+}
+
+const createDTSBuild = () => {
+  return {
     input: "src/index.ts",
-    output: [{ file: "dist/types.d.ts", format: "es" }],
+    output: [{ file: path.join(outputDir, "types.d.ts"), format: "es" }],
     plugins: [dts()],
     external: [/\.css$/],
-  },
-]
+  }
+}
+
+const cssBuild = createCSSBuild()
+const jsBuild = createJSBuild()
+const dtsBuild = createDTSBuild()
+
+export default [cssBuild, jsBuild, dtsBuild]
