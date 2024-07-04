@@ -20,7 +20,9 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "static": "npm-run-all --parallel -c tsc lint:ts format:check",
-    "rollup": "rollup -c --bundleConfigAsCjs && npm pack",
+    "bundle": "rollup -c --bundleConfigAsCjs && npm pack",
+    "bundle:generate": "rollup -c --bundleConfigAsCjs",
+    "bundle:pack": "npm pack",
     "prepare": "husky"
   },
   "author": "Ravn",
