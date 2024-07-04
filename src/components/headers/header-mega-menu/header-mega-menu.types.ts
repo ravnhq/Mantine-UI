@@ -1,23 +1,14 @@
-import { type ButtonProps } from "@mantine/core"
-
-interface ISubMenudata {
-  // Todo: Discuss type for icons
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  icon: any
-  title: string
-  description: string
-}
+// import { type ButtonProps } from "@mantine/core"
+import { ReactNode } from "react"
 
 interface ImenuData {
   title: string
-  isSubMenu: boolean
+  link: string
 }
 
 export type HeaderWithMegaMenuProps = {
-  primaryButtontitle?: string
-  primaryButtonProps?: ButtonProps
-  secondarybuttontitle?: string
-  secondaryButtonProps?: ButtonProps
-  subMenuItems: ISubMenudata[]
+  menuIcon?: ReactNode
+  subMenuContent?: ReactNode
+  rightContent?: ReactNode
   menuItems: ImenuData[]
 }
