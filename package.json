@@ -72,7 +72,9 @@
     "storybook": "^8.1.11",
     "storybook-dark-mode": "^4.0.2",
     "typescript": "^5.5.2",
-    "vite-tsconfig-paths": "^4.3.2"
+    "vite-tsconfig-paths": "^4.3.2",
+    "@mantine/core": ">=7.11.0",
+    "@mantine/hooks": ">=7.11.0"
   },
   "dependencies": {
     "@tabler/icons-react": ">=3.7.0"
