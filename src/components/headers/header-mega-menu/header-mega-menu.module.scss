@@ -20,7 +20,6 @@
   @media (max-width: $mantine-breakpoint-sm) {
     height: toRem(42px);
     width: 100%;
-    background-color: red;
   }
 
   @include hover {

@@ -1,4 +1,4 @@
 {
-  "*.{js,jsx,ts,tsx,css,scss,html,md,yml}": ["yarn format"],
-  "*.{js,jsx,ts,tsx}": ["yarn lint:ts"]
+  "*.{js,jsx,ts,tsx,css,scss,html,md,yml}": ["npm run format"],
+  "*.{js,jsx,ts,tsx}": ["npm run lint:ts"]
 }
