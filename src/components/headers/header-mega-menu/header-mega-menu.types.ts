@@ -1,13 +1,7 @@
 import { ReactNode } from "react"
 
-interface ImenuData {
-  title: string
-  link: string
-}
-
-export type HeaderWithMegaMenuProps = {
+export interface HeaderWithMegaMenuProps {
   logo?: ReactNode
-  subMenuContent?: ReactNode
   rightContent?: ReactNode
-  menuItems: ImenuData[]
+  menuItems: ReactNode[]
 }
