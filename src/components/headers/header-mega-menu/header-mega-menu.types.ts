@@ -1,4 +1,3 @@
-// import { type ButtonProps } from "@mantine/core"
 import { ReactNode } from "react"
 
 interface ImenuData {
@@ -7,7 +6,7 @@ interface ImenuData {
 }
 
 export type HeaderWithMegaMenuProps = {
-  menuIcon?: ReactNode
+  logo?: ReactNode
   subMenuContent?: ReactNode
   rightContent?: ReactNode
   menuItems: ImenuData[]
