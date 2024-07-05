@@ -1,4 +1,5 @@
 import { FooterLinks } from "@components/footers"
+import { FooterLinksProps } from "@components/footers/footer-links/footer-links.types"
 import { ActionIcon, Text, rem } from "@mantine/core"
 import type { Meta, StoryObj } from "@storybook/react"
 import {
@@ -15,7 +16,7 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-const linksMockData = [
+const linksMockData: FooterLinksProps["linksData"] = [
   {
     title: "About",
     links: [
