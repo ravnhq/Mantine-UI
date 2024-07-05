@@ -1,3 +1,5 @@
+import { ReactNode } from "react"
+
 interface Link {
   label: string
   link: string
@@ -9,9 +11,8 @@ interface LinkColumn {
 }
 
 export type FooterLinksProps = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  logo?: any
-  footerLabel?: string
-  yearLabel?: string
+  leftContent?: ReactNode
+  copyRightContent?: ReactNode
   linksData: LinkColumn[]
+  socialContent?: ReactNode
 }
