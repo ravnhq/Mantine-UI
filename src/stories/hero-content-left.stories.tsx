@@ -12,6 +12,8 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
+    urlImage:
+      "https://images.pexels.com/photos/380768/pexels-photo-380768.jpeg",
     title: "Hero With content left",
     description: "A Hero component with content left",
     titleProps: {

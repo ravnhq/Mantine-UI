@@ -8,9 +8,13 @@ export function HeroContentLeft({
   children,
   descriptionProps,
   titleProps,
+  urlImage,
 }: HeroContentLeftProps) {
   return (
-    <div className={classes.hero}>
+    <div
+      className={classes.hero}
+      style={{ backgroundImage: `url(${urlImage})` }}
+    >
       <Overlay
         gradient="linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, .65) 40%)"
         opacity={1}

@@ -7,4 +7,5 @@ export interface HeroContentLeftProps {
   description?: string
   descriptionProps?: TextProps
   children?: ReactNode
+  urlImage?: string
 }
