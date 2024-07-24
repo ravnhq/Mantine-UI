@@ -1,4 +1,4 @@
-import classes from "./footer-links.module.scss"
+import * as classes from "./footer-links.css"
 import { FooterLinksProps } from "./footer-links.types"
 import { Container, Group, Text } from "@mantine/core"
 

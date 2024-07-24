@@ -5,12 +5,8 @@ import typescript from "@rollup/plugin-typescript"
 import path from "node:path"
 import { dts } from "rollup-plugin-dts"
 import peerDepsExternal from "rollup-plugin-peer-deps-external"
-import postcss from "rollup-plugin-postcss"
-
-const packageJson = require("./package.json")
 
 const outputDir = "dist"
-const cssOutputPath = path.join(outputDir, "index.css")
 const sharedPlugins = [
   peerDepsExternal(),
   resolve(),
@@ -19,65 +15,31 @@ const sharedPlugins = [
   terser(),
 ]
 
-const createCSSBuild = () => {
-  return {
-    input: "src/index.ts",
-    output: {
-      file: cssOutputPath,
-    },
-    plugins: [
-      sharedPlugins,
-      postcss({
-        extract: "index.css",
-        minimize: true,
-        use: [
-          [
-            "sass",
-            {
-              data: '@import "./_mantine.scss"; ',
-            },
-          ],
-        ],
-      }),
-    ],
-    external: [],
-  }
-}
-
 const createJSBuild = () => {
   return {
     input: "src/index.ts",
     output: [
       {
-        file: packageJson.main,
+        dir: "dist/cjs",
         format: "cjs",
+        preserveModules: true,
       },
       {
-        file: packageJson.module,
+        dir: "dist/esm",
         format: "esm",
+        preserveModules: true,
       },
     ],
-    plugins: [
-      ...sharedPlugins,
-      postcss({
-        extract: false,
-        minimize: true,
-        use: [
-          [
-            "sass",
-            {
-              data: '@import "./_mantine.scss"; ',
-            },
-          ],
-        ],
-      }),
-    ],
+    plugins: [...sharedPlugins],
     external: [
       "react",
       "react-dom",
       "@mantine/core",
       "@mantine/hooks",
       "@tabler/icons-react",
+      "@mantine/vanilla-extract",
+      "@vanilla-extract/css",
+      "@vanilla-extract/dynamic",
     ],
   }
 }
@@ -91,8 +53,7 @@ const createDTSBuild = () => {
   }
 }
 
-const cssBuild = createCSSBuild()
 const jsBuild = createJSBuild()
 const dtsBuild = createDTSBuild()
 
-export default [cssBuild, jsBuild, dtsBuild]
+export default [jsBuild, dtsBuild]

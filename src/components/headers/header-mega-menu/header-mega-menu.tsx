@@ -1,4 +1,4 @@
-import classes from "./header-mega-menu.module.scss"
+import * as classes from "./header-mega-menu.css"
 import { HeaderWithMegaMenuProps } from "./header-mega-menu.types"
 import {
   Box,
@@ -8,6 +8,7 @@ import {
   Group,
   ScrollArea,
   rem,
+  useMantineTheme,
 } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
 
@@ -19,9 +20,12 @@ export function HeaderMegaMenu({
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false)
 
+  const { breakpoints } = useMantineTheme()
+
   return (
     <Box>
       <header className={classes.header}>
+        {JSON.stringify(breakpoints)}
         <Group justify="space-between" h="100%">
           {logo}
           <Group h="100%" gap={0} visibleFrom="sm">

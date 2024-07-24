@@ -1,4 +1,5 @@
 import type { StorybookConfig } from "@storybook/react-vite"
+import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin"
 import path from "node:path"
 import { fileURLToPath } from "node:url"
 import { mergeConfig } from "vite"
@@ -41,6 +42,7 @@ const storybookConfig: StorybookConfig = {
           },
         },
       },
+      plugins: [vanillaExtractPlugin()],
     })
   },
 }
